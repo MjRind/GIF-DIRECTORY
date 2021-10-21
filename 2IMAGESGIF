@@ -1,0 +1,11 @@
+image = imread('Majid.jpg');
+Image2 = imread('Abdul.jpg');
+image = im2double(image);
+Image2 = im2double(Image2);
+formula = Image2 - image;
+iter = 40;
+formula = formula ./ iter
+for i = 1 : iter
+    image = image + formula;
+    [im,map] = rgb2ind(image,256);
+end
